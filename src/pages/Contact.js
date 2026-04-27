@@ -44,16 +44,22 @@ export default function Contact() {
     setLoading(false);
   };
 
-  return (
-    <section className="section text-white">
-      <div className="max-w-xl mx-auto">
+return (
+  <section className="min-h-screen flex items-center justify-center bg-[#020617] px-6">
 
-        <h2 className="text-4xl font-bold gradient-text mb-6 text-center">
-          Contact Us
-        </h2>
+    <div className="w-full max-w-xl">
 
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+      {/* Title */}
+      <h2 className="text-4xl md:text-5xl font-semibold text-center mb-10">
+        <span className="gradient-text">Contact Us</span>
+      </h2>
 
+      {/* Glass Card */}
+      <div className="backdrop-blur-2xl bg-white/5 border border-white/10 rounded-3xl p-8 shadow-[0_20px_80px_rgba(0,0,0,0.6)]">
+
+        <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+
+          {/* Name */}
           <input
             type="text"
             name="name"
@@ -61,9 +67,10 @@ export default function Contact() {
             value={form.name}
             onChange={handleChange}
             required
-            className="input"
+            className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition"
           />
 
+          {/* Email */}
           <input
             type="email"
             name="email"
@@ -71,9 +78,10 @@ export default function Contact() {
             value={form.email}
             onChange={handleChange}
             required
-            className="input"
+            className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition"
           />
 
+          {/* Message */}
           <textarea
             name="message"
             placeholder="Your Message"
@@ -81,27 +89,29 @@ export default function Contact() {
             onChange={handleChange}
             required
             rows="5"
-            className="input"
+            className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition"
           />
 
+          {/* Button */}
           <button
             type="submit"
             disabled={loading}
-            className="btn-primary"
+            className="mt-2 px-6 py-3 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-400 text-black font-medium hover:scale-[1.03] active:scale-95 transition disabled:opacity-50"
           >
             {loading ? "Sending..." : "Send Message"}
           </button>
 
-          {/* Status Message */}
+          {/* Status */}
           {status && (
-            <p className="text-center mt-2 text-sm text-gray-300">
+            <p className="text-center text-sm text-gray-300 mt-2">
               {status}
             </p>
           )}
 
         </form>
       </div>
-    </section>
-  );
+    </div>
+  </section>
+);
 }
 
