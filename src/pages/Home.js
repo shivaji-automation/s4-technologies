@@ -47,28 +47,7 @@ export default function Home() {
       <div className="absolute inset-0 bg-black/10 z-20" />
 
       {/* 🎬 INTRO LOGO (SAFE ON ALL SCREENS) */}
-      <motion.div className="absolute inset-0 flex items-center justify-center z-[999] pointer-events-none">
-        <motion.img
-          src="/Brand.png"
-          alt="logo"
-          initial={{ scale: 3, y: 0, opacity: 1 }}
-          animate={{
-            scale: showIntro ? 3 : 1,
-            y: showIntro ? 0 : -120,
-            opacity: showIntro ? 1 : 0,
-          }}
-          transition={{
-            duration: 1.2,
-            ease: "easeInOut",
-          }}
-          className="
-            w-auto
-            h-[35vh] sm:h-[40vh] md:h-[45vh]
-            max-h-[320px] md:max-h-[420px]
-            object-contain
-          "
-        />
-      </motion.div>
+ 
 
       {/* 🧊 MAIN CONTENT */}
       <motion.div
@@ -78,7 +57,6 @@ export default function Home() {
         transition={{ duration: 0.8, delay: 0.3 }}
         className="relative z-30 flex flex-col items-center justify-center text-center px-4 sm:px-6 w-full max-w-3xl"
       >
-
         {/* 🖼 HERO LOGO */}
         {!showIntro && (
           <motion.img
